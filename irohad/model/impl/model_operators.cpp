@@ -50,7 +50,7 @@ namespace iroha {
 
     bool Signature::operator!=(const Signature &rhs) const {
       return not operator==(rhs);
-    };
+    }
 
     bool AppendRole::operator==(const Command &command) const {
       if (! instanceof <AppendRole>(command)) return false;
