@@ -18,7 +18,7 @@
 add_subdirectory(generators)
 add_subdirectory(converters)
 
-add_library(common_execution
+addlibrary(common_execution
     execution/impl/common_executor.cpp
     )
 
@@ -27,7 +27,7 @@ target_link_libraries(common_execution
     common
     )
 
-add_library(command_execution
+addlibrary(command_execution
     execution/impl/command_executor.cpp
     execution/impl/command_executor_factory.cpp
     )
@@ -35,7 +35,7 @@ target_link_libraries(command_execution
     common_execution
     )
 
-add_library(model
+addlibrary(model
     model_crypto_provider_impl.cpp
     impl/model_operators.cpp
     impl/query_execution.cpp
@@ -52,7 +52,7 @@ target_link_libraries(model
     rapidjson
     )
 
-add_library(model_registrations INTERFACE)
+addlibrary(model_registrations INTERFACE)
 target_include_directories(model_registrations INTERFACE
     registration
     )

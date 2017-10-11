@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-add_library(iroha_amount
+addlibrary(iroha_amount
     amount.cpp
     )
 

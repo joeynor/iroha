@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-add_library(json_model_converters
+addlibrary(json_model_converters
     impl/json_block_factory.cpp
     impl/json_command_factory.cpp
     impl/json_common.cpp
@@ -30,7 +30,7 @@ target_link_libraries(json_model_converters
     logger
     )
 
-add_library(pb_model_converters
+addlibrary(pb_model_converters
     impl/pb_block_factory.cpp
     impl/pb_command_factory.cpp
     impl/pb_query_factory.cpp

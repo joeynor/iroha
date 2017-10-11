@@ -16,7 +16,7 @@ target_link_libraries(flat_file_test
     libs_common
     )
 
-add_library(ametsuchi_fixture INTERFACE)
+addlibrary(ametsuchi_fixture INTERFACE)
 target_link_libraries(ametsuchi_fixture INTERFACE
     pqxx
     cpp_redis
