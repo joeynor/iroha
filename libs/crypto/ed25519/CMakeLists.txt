@@ -1,4 +1,4 @@
-add_library(ed25519
+addlibrary(ed25519
     add_scalar.c
     fe.c
     ge.c
