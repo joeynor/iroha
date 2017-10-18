@@ -446,9 +446,12 @@ namespace iroha_cli {
 
       provider_->sign(tx);
 
-      CliClient client(address.value().first, address.value().second);
       GrpcResponseHandler response_handler;
-      response_handler.handle(client.sendTx(tx));
+
+      response_handler.handle(
+          CliClient(address.value().first, address.value().second).sendTx(tx));
+
+      printTxHash(tx);
       printEnd();
       // Stop parsing
       return false;
@@ -502,6 +505,14 @@ namespace iroha_cli {
       printMenu("Choose command to add: ", commands_menu_);
       // Continue parsing
       return true;
+    }
+
+    void InteractiveTransactionCli::printTxHash(iroha::model::Transaction &tx) {
+      std::cout
+          << "Congratulation, your transaction was accepted for processing."
+          << std::endl;
+      std::cout << "Its hash is " << iroha::hash(tx).to_hexstring()
+                << std::endl;
     }
 
   }  // namespace interactive
