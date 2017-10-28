@@ -20,6 +20,7 @@
 
 #include "interfaces/common_objects/signature.hpp"
 #include "interfaces/hashable.hpp"
+#include "interfaces/polymorphic_wrapper.hpp"
 
 namespace shared_model {
   namespace interface {
@@ -34,10 +35,10 @@ namespace shared_model {
     class Signable : public Hashable<Model, OldModel> {
      public:
       /// Type of transaction signature
-      using SignatureType = Signature;
+      using SignatureType = const detail::PolymorphicWrapper<Signature>;
 
       /// Type of set of signatures
-      using SignatureSetType = std::unordered_set<const SignatureType>;
+      using SignatureSetType = std::unordered_set<SignatureType>;
 
       /**
        * @return attached signatures
