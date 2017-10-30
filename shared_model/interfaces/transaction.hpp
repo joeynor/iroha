@@ -83,7 +83,7 @@ namespace shared_model {
         return this->hash() == rhs.hash();
       }
 
-      iroha::model::Transaction *makeOldModel() const {
+      iroha::model::Transaction *makeOldModel() const override {
         // TODO implement conversion to old style transaction
         return nullptr;
       }

@@ -69,7 +69,7 @@ namespace shared_model {
 
       ModelType *copy() const override { return new ModelType(*this); }
 
-      OldModelType *makeOldModel() const {
+      OldModelType *makeOldModel() const override {
         return boost::apply_visitor(
             detail::OldModelCreatorVisitor<OldModelType *>(), command_variant);
       }
