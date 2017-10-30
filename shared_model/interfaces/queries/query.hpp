@@ -23,14 +23,13 @@
 #include "interfaces/polymorphic_wrapper.hpp"
 #include "interfaces/primitive.hpp"
 #include "interfaces/queries/get_account.hpp"
-#include "interfaces/signable.hpp"
-#include "interfaces/visitor_apply_for_all.hpp"
-#include "interfaces/queries/get_account.hpp"
 #include "interfaces/queries/get_account_assets.hpp"
 #include "interfaces/queries/get_asset_info.hpp"
 #include "interfaces/queries/get_roles.hpp"
-#include "interfaces/queries/get_transactions.hpp"
 #include "interfaces/queries/get_signatories.hpp"
+#include "interfaces/queries/get_transactions.hpp"
+#include "interfaces/signable.hpp"
+#include "interfaces/visitor_apply_for_all.hpp"
 #include "model/query.hpp"
 
 namespace shared_model {
@@ -45,7 +44,15 @@ namespace shared_model {
        * Variant with wrapper on current concrete query
        * @return variant with concrete query
        */
-      boost::variant<w<GetAccount>> query_variant;
+      boost::variant<w<GetAccount>,
+                     w<GetAccountAssets>,
+                     w<GetAssetInfo>,
+                     w<GetRoles>,
+                     w<GetRolePermissions>,
+                     w<GetAccountAssetTransactions>,
+                     w<GetAccountTransactions>,
+                     w<GetSignatories>>
+          query_variant;
 
      public:
       /**
