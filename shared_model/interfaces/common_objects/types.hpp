@@ -23,6 +23,7 @@ namespace shared_model {
       /// Type of account id
       using AccountIdType = std::string;
       using AssetIdType = std::string;
+      using RoleIdType = std::string;
     }  // namespace types
   }    // namespace interface
 }  // namespace shared_model
