@@ -15,5 +15,15 @@
  * limitations under the License.
  */
 
-#include "interfaces/transaction.hpp"
+#include "interfaces/account.hpp"
+#include "interfaces/account_asset.hpp"
+#include "interfaces/asset.hpp"
 #include "interfaces/queries/query.hpp"
+#include "interfaces/queries/responses/account_asset_response.hpp"
+#include "interfaces/queries/responses/account_response.hpp"
+#include "interfaces/queries/responses/asset_response.hpp"
+#include "interfaces/queries/responses/error_response.hpp"
+#include "interfaces/queries/responses/roles_response.hpp"
+#include "interfaces/queries/responses/signatories_response.hpp"
+#include "interfaces/queries/responses/transactions_response.hpp"
+#include "interfaces/transaction.hpp"
