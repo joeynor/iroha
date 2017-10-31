@@ -17,11 +17,38 @@
 
 #ifndef IROHA_SHARED_MODEL_TYPES_HPP
 #define IROHA_SHARED_MODEL_TYPES_HPP
+
+#include "crypto/hash.hpp"
+
 namespace shared_model {
   namespace interface {
     namespace types {
       /// Type of account id
       using AccountIdType = std::string;
+
+      /// Type of asset id
+      using AssetIdType = std::string;
+
+      /// Type of domain id
+      using DomainIdType = std::string;
+
+      /// Type of transaction hash
+      using TransactionHashType = iroha::hash256_t;
+
+      /// Type of transaction hashes
+      using TransactionHashesType = std::vector<TransactionHashType>;
+
+      /// Type of precision
+      using PrecisionType = uint8_t;
+
+      /// Type of role permissions
+      using RolePermissionsType = std::vector<std::string>;
+
+      /// Type of roles
+      using RolesType = std::vector<std::string>;
+
+      /// Type of keys
+      using KeysType = std::vector<iroha::pubkey_t>;
     }  // namespace types
   }    // namespace interface
 }  // namespace shared_model
