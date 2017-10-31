@@ -18,13 +18,16 @@
 #ifndef IROHA_SHARED_MODEL_ACCOUNT_ASSET_RESPONSE_HPP
 #define IROHA_SHARED_MODEL_ACCOUNT_ASSET_RESPONSE_HPP
 
+#include "interfaces/account_asset.hpp"
 #include "interfaces/common_objects/types.hpp"
 #include "interfaces/hashable.hpp"
-#include "interfaces/account_asset.hpp"
 #include "model/queries/responses/account_assets_response.hpp"
 
 namespace shared_model {
   namespace interface {
+    /**
+     * Provide response with account asset
+     */
     class AccountAssetResponse
         : public Hashable<AccountAssetResponse,
                           iroha::model::AccountAssetResponse> {
@@ -36,13 +39,22 @@ namespace shared_model {
 
       /**
        * Stringify the data.
-       * @return the content of account asset response.
+       * @return string representation of data.
        */
       virtual std::string toString() const override {
         std::string s = "AccountAssetResponse:{";
         s += "AccountAsset:" + accountAsset().toString();
         s += "}";
         return s;
+      }
+
+      /**
+       * Implementation of operator ==
+       * @param rhs - the right-hand side of AccountAssetResponse object
+       * @return true if they are same.
+       */
+      virtual bool operator==(const ModelType &rhs) const override {
+        return accountAsset() == rhs.accountAsset();
       }
 
       /**

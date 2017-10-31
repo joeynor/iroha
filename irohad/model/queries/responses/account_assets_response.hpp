@@ -24,8 +24,13 @@
 
 namespace iroha {
   namespace model {
-
+    /**
+     * Provide response with account asset
+     */
     struct AccountAssetResponse : public QueryResponse {
+      /**
+       * attached account asset
+       */
       AccountAsset acct_asset{};
     };
   }  // namespace model
